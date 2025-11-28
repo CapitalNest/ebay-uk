@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ebay.co.uk</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+        header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+        header img.logo {
+            height: 38px;
+        }
+        .store-banner {
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .store-banner h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .store-stats {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .search-box {
+            padding: 10px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+        }
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px;
+        }
+        .cat-card {
+            min-width: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        .cat-card img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+        .cat-card p {
+            margin: 8px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .product-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .product-card .info {
+            padding: 10px;
+        }
+        .product-card .info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .product-card .info p {
+            margin: 5px 0 0 0;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <img src="https://dummyimage.com/140x40/000/fff&text=LuxTime" class="logo" /> -->
+        <div><a style="font-weight: bold; color: red; font-size: 35px; text-decoration: none; outline: none;" href="">e</a><a style="font-weight: bold; color: blue; font-size: 35px; text-decoration: none; outline: none;" href="">b</a><a style="font-weight: bold; color: yellow; font-size: 35px; text-decoration: none; outline: none;" href="">a</a><a style="font-weight: bold; color: green; font-size: 35px; text-decoration: none; outline: none;" href="">y</a></div>
+    </header>
+
+    <div class="profile-header" style="background:#f2f2f2;padding:20px;text-align:center;border-bottom:1px solid #ddd; background: url(https://th.bing.com/th/id/OIP.6v1GeSxa_L4CBac61zZeUQHaEK?w=283&h=180&c=7&r=0&o=7&pid=1.7&rm=3); background-repeat: no-repeat;">
+        <img src="https://dummyimage.com/100x100/000/fff&text=LT" style="width:90px;height:90px;border-radius:50%;border:3px solid #000;" />
+        <h2 style="margin:10px 0 5px 0;font-size:22px;">LuxeMarket</h2>
+        <p style="margin:0;font-size:15px;color:#444;">99.8% positive feedback • 133K items sold • 21K followers</p>
+    </div>
+
+    <div class="store-banner">
+        <h1>LuxTime Store</h1>
+    </div>
+
+    <div class="store-stats">
+        ⭐ 99.7% Positive • 58K Sold • 12K Followers
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search all 7 items" />
+    </div>
+
+    <div class="section-title">Featured Categories</div>
+    <div class="categories">
+        <div class="cat-card">
+            <img src="https://th.bing.com/th?q=Bag+Logo+for+Website&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&pid=InlineBlock&rm=3&mkt=en-WW&cc=NG&setlang=en&adlt=moderate&t=1&mw=247" />
+            <p>Bags</p>
+        </div>
+        <div class="cat-card">
+            <img src="https://th.bing.com/th/id/OIP.1T3cOcZDuOwRyri0XfEVOAHaHa?w=136&h=150&c=6&o=7&pid=1.7&rm=3" />
+            <p>Sneakers</p>
+        </div>
+        <div class="cat-card">
+            <img src="https://th.bing.com/th?id=OIF.ZRkNlNV%2bTb9zE6p0bM4NoA&w=152&h=203&c=7&r=0&o=7&pid=1.7&rm=3" />
+            <p>Cloths</p>
+        </div>
+    </div>
+
+    <div class="section-title">Available Items</div>
+    <div class="products">
+        <div class="product-card">
+            <a href="./product-143.html"><img src="https://th.bing.com/th/id/OIP.KcG_-hQGug03729vMBHiSwHaHa?w=168&h=180&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>Mulberry Millie Medium Leather Tote Bag</h3>
+                <p>£482.47 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">7% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="./product-243.html"><img src="https://th.bing.com/th/id/OIP.lz8YeQcBWoXwR2ltUx8NEAHaHu?w=177&h=185&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>Mulberry Abstract Canvas Pattern Large Holdall Bag</h3>
+                <p>£502.21 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">2.7% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+           <a href="./product-343.html"> <img src="data:image/webp;base64,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" /></a>
+            <div class="info">
+                <h3>Mulberry Alexa Large Calfskin Leather Bag</h3>
+                <p>£488.21 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">2.7% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="./product-443.html"><img src="https://th.bing.com/th/id/OIP.74Pp6Qqy18q74mXaCVxXHQHaJ3?w=151&h=200&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>Mulberry Zipped Bayswater Tote Bag</h3>
+                <p>£479.37 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">4% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+           <a href="./product-543.html"> <img src="https://th.bing.com/th/id/OIP.wMXIBnNLmTIfwd4K7ovEngHaJQ?w=183&h=229&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>Mulberry Millie Tote Bag Deep Amber Heavy Grain Leather</h3>
+                <p>£526.27 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">4% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+           <a href="./product-643.html"> <img src="https://th.bing.com/th/id/OIP.JVNyOIgER5iKs6WRM-z33wAAAA?w=122&h=183&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>AUTH NWT Mulberry Little Softie Chain-Linked Quilted Leather Crossbody Bag-Grey</h3>
+                <p>£508.42 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">2.5% OFF</a></p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="./product-743.html"><img src="https://th.bing.com/th/id/OIP.tJ2hsaTISteS4XAYmSPozQAAAA?w=281&h=187&c=7&r=0&o=7&pid=1.7&rm=3" /></a>
+            <div class="info">
+                <h3>Mulberry Abstract Canvas Pattern Zip Large Holdall Weekend Shoulder Bag Unisex</h3>
+                <p>£517.47 <a style="font-weight: bold; color: green; font-family: Arial, Helvetica, sans-serif; text-decoration: none; outline: none;" href="">4.2% OFF</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

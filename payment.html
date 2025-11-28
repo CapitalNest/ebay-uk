@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Bitcoin Payment – Ecbay</title>
+<style>
+  :root{
+    --accent:#f7931a;
+    --dark:#0f172a;
+    --muted:#6b7280;
+    --radius:14px;
+  }
+  body{margin:0;font-family:Inter,system-ui;background:#f8fafc;color:var(--dark);padding:18px;}
+  .container{max-width:480px;margin:0 auto;}
+
+  .card{
+    background:#fff;
+    padding:20px;
+    border-radius:var(--radius);
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    margin-top:20px;
+  }
+
+  .logo{
+    font-size:26px;
+    font-weight:800;
+    color:var(--accent);
+    text-align:center;
+    margin-top:10px;
+  }
+
+  .amount{
+    text-align:center;
+    margin-top:10px;
+    font-size:20px;
+    font-weight:700;
+  }
+
+  .btc-box{
+    margin-top:20px;
+    background:#fff7e6;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #ffe2b9;
+  }
+
+  .btc-row{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .btc-address{word-break:break-all;font-size:15px;font-weight:600;color:var(--dark);}
+  .copy-btn{
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+  }
+
+  .timer{
+    margin-top:16px;
+    font-size:18px;
+    font-weight:700;
+    color:#d92828;
+    text-align:center;
+  }
+
+  .note{
+    margin-top:20px;
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">Ecbay</div>
+
+    <div class="card">
+      <div class="amount">Total: <span style="color:var(--accent)">£482.47</span></div>
+
+      <div style="text-align:center;margin-top:8px;font-size:14px;color:var(--muted)">Pay using Bitcoin</div>
+
+      <div class="btc-box">
+        <div class="btc-row">
+          <div class="btc-address" id="btcAddress">bc1qexamplepaymentaddress8822xkdlw92mxx</div>
+          <button class="copy-btn" id="copyBtn">Copy</button>
+        </div>
+      </div>
+
+      <div class="timer">Time Left: <span id="countdown">15:00</span></div>
+
+      <div class="note">
+        ⚠ Please send the exact Bitcoin amount to the above address.<br><br>
+        • Payment will be confirmed automatically once received.<br>
+        • Do NOT refresh the BTC address – it will remain the same.<br>
+        • Make sure you copy and paste the address correctly.<br>
+        • Your delivery will be processed within 2 working days once payment is confirmed.
+      </div>
+    </div>
+  </div>
+
+<script>
+// -------- Persistent 15-minute timer --------
+const TIMER_KEY = "ecbay_payment_timer_start";
+const DURATION = 15 * 60 * 1000; // 15 minutes
+
+function getStartTime(){
+  let saved = localStorage.getItem(TIMER_KEY);
+  if(!saved){
+    saved = Date.now();
+    localStorage.setItem(TIMER_KEY, saved);
+  }
+  return parseInt(saved);
+}
+
+let startTime = getStartTime();
+let endTime = startTime + DURATION;
+
+function updateTimer(){
+  const now = Date.now();
+  let diff = endTime - now;
+
+  if(diff <= 0){
+    document.getElementById("countdown").innerText = "00:00";
+    return;
+  }
+
+  let mins = Math.floor(diff / 60000);
+  let secs = Math.floor((diff % 60000) / 1000);
+  if(mins < 10) mins = "0" + mins;
+  if(secs < 10) secs = "0" + secs;
+
+  document.getElementById("countdown").innerText = mins + ":" + secs;
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+
+// -------- Copy BTC Address --------
+const copyBtn = document.getElementById("copyBtn");
+copyBtn.addEventListener("click", () => {
+  const addr = document.getElementById("btcAddress").innerText;
+  navigator.clipboard.writeText(addr).then(() => {
+    copyBtn.innerText = "Copied!";
+    setTimeout(()=> copyBtn.innerText = "Copy", 2000);
+  });
+});
+</script>
+</body>
+</html>
